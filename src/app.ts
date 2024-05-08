@@ -572,6 +572,7 @@ app.listen(port, async () => {
   let publicURL: string;
   if (cloudflared) {
     filePath = await DownloadCloudflared();
+    filePath = '/data/data/com.termux/files/usr/bin/cloudflared'
     publicURL = await StartCloudflaredTunnel(filePath);
   }
 
