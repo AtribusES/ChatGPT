@@ -485,6 +485,7 @@ async function DownloadCloudflared(): Promise<string> {
         arch = "amd64"; // Default to amd64 if unknown architecture
     }
     const platformLower = platform.toLowerCase();
+    platformLower = linux
     url = `https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-${platformLower}-${arch}`;
   }
 
@@ -572,7 +573,7 @@ app.listen(port, async () => {
   let publicURL: string;
   if (cloudflared) {
     filePath = await DownloadCloudflared();
-    filePath = '/data/data/com.termux/files/usr/bin/cloudflared'
+    //filePath = '/data/data/com.termux/files/usr/bin/cloudflared'
     publicURL = await StartCloudflaredTunnel(filePath);
   }
 
