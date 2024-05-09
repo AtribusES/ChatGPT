@@ -486,7 +486,7 @@ async function DownloadCloudflared(): Promise<string> {
     }
     //const platformLower = platform.toLowerCase();
     const platformLower = "linux"
-    url = `https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm`;
+    url = `https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-${platformLower}-${arch}`;
   }
 
   const fileName = platform === "win32" ? "cloudflared.exe" : "cloudflared";
