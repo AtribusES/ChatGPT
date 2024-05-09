@@ -486,7 +486,7 @@ async function DownloadCloudflared(): Promise<string> {
     }
     //const platformLower = platform.toLowerCase();
     const platformLower = "linux"
-    url = `https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-${platformLower}-${arch}`;
+    url = `https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm`;
   }
 
   const fileName = platform === "win32" ? "cloudflared.exe" : "cloudflared";
@@ -573,7 +573,6 @@ app.listen(port, async () => {
   let publicURL: string;
   if (cloudflared) {
     filePath = await DownloadCloudflared();
-    //filePath = '/data/data/com.termux/files/usr/bin/cloudflared'
     publicURL = await StartCloudflaredTunnel(filePath);
   }
 
