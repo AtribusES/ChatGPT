@@ -484,8 +484,8 @@ async function DownloadCloudflared(): Promise<string> {
       default:
         arch = "amd64"; // Default to amd64 if unknown architecture
     }
-    const platformLower = platform.toLowerCase();
-    platformLower = "linux"
+    //const platformLower = platform.toLowerCase();
+    const platformLower = "linux"
     url = `https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-${platformLower}-${arch}`;
   }
 
